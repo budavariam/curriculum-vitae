@@ -1,0 +1,15 @@
+{
+    "workbench.colorCustomizations": {
+        "activityBar.activeBackground": "#447da2",
+        "activityBar.background": "#447da2",
+        "activityBar.foreground": "#e7e7e7",
+        "activityBar.inactiveForeground": "#e7e7e799",
+        "activityBarBadge.background": "#702f57",
+        "activityBarBadge.foreground": "#e7e7e7",
+        "sash.hoverBorder": "#447da2"
+    },
+    "peacock.color": "#35617e",
+    "conventionalCommits.scopes": [
+        "cv"
+    ]
+}

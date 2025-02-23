@@ -1,0 +1,65 @@
+
+% Custom Macros
+\newcommand{\generatedAt}{%
+    \number\year. \ifnum\month<10 0\fi\number\month. \ifnum\day<10 0\fi\number\day.%
+}
+
+\newcommand{\sectiondivider}{%
+    \vspace{10pt}%
+}
+
+\newcommand{\myspacing}{%
+    \vspace{4pt}%
+}
+
+\newcommand{\myindent}{%
+    \hspace*{6mm}%
+}
+
+\newcommand{\myurl}[2]{%
+    \href{#1}{\textcolor{linkcolor}{#2}}%
+}
+
+\newcommand{\mymail}[1]{%
+    #1@gmail.com%
+}
+
+\newcommand{\cvsection}[1]{%
+    \noindent
+    \begin{minipage}{\linewidth}
+        \sectiondivider
+        {\fontsize{12pt}{12pt}\selectfont\bfseries
+         \textcolor{sectioncolor}{\MakeUppercase{#1}}}\\
+    \end{minipage}
+}
+
+\newcommand{\customsection}[2]{%
+    \noindent
+    \begin{minipage}{\linewidth}
+        \cvsection{#1}
+        \color{black}
+        #2\\
+    \end{minipage}
+}
+
+\newcommand{\workentry}[7]{%
+    \par\noindent
+    \begin{minipage}{\linewidth}
+        \color{black}
+        \textbf{#1}, \textbf{\uline{#2}} \hfill \textit{#3}\myspacing\\
+        \myspacing\begin{scriptsize}#4\end{scriptsize}\\
+        \myindent#6\\
+        #7\\
+        \medskip
+    \end{minipage}
+}
+
+\newcommand{\educationentry}[4]{%
+    \color{black}
+    \par\noindent
+    \begin{minipage}{\linewidth}
+        \textbf{#1} - \textbf{#2}\myspacing\\
+        \myspacing\small{\textit{#3}}\\
+        #4\\
+    \end{minipage}
+}
