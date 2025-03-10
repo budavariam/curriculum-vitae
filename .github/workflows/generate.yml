@@ -1,0 +1,31 @@
+name: Generate and Publish PDF
+
+on:
+  push:
+    branches:
+      - main  # Runs on push to `main`
+  workflow_dispatch:  # Allows manual triggering
+
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+
+      - name: Build and Run Docker Compose to Generate PDF
+        run: |
+          docker compose up --build
+          ls -lh budavariam.pdf  # Debugging: Check if the PDF exists
+
+      - name: Deploy PDF to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./
+          publish_branch: gh-pages
+          keep_files: true
