@@ -20,12 +20,14 @@ jobs:
       - name: Build and Run Docker Compose to Generate PDF
         run: |
           docker compose up --build
-          ls -lh budavariam.pdf  # Debugging: Check if the PDF exists
+          # ls -lh budavariam.pdf
+          mkdir -p ./build
+          cp index.html budavariam.pdf ./build
 
       - name: Deploy PDF to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./
+          publish_dir: ./build
           publish_branch: gh-pages
-          keep_files: true
+          keep_files: false
