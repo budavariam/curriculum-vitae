@@ -308,3 +308,7 @@ TSWLatexianTemp*
 
 *.pdf
 .DS_Store
+
+budavariam.html
+budavariam.tmp
+budavariam.css

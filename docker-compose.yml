@@ -6,3 +6,4 @@ services:
     volumes:
       - .:/workspace
     command: ["sh", "-c", "lualatex --shell-escape --interaction=nonstopmode budavariam.tex && lualatex --shell-escape --interaction=nonstopmode budavariam.tex"]
+    # command: ["sh", "-c", "lualatex --shell-escape --interaction=nonstopmode budavariam.tex; mk4ht htlatex budavariam.tex \"xhtml,html5,charset=utf-8\" \" -cunihtf -utf8\" \"Gdvips\""]
